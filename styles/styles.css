@@ -1,0 +1,234 @@
+/*Reglas Import al principio del archivo CSS, se utilizan para importar las fuentes
+*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Oswald&display=swap');
+
+/* reseteo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* generales */
+
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #67666e;
+}
+
+header {
+    margin-top: 80px;
+    padding: 0.5em;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+p {
+    font-size: 1.4em;
+}
+
+
+/* imágenes */
+
+.logo-small {
+    height: 100px;;
+}
+
+/*Menús de navegación */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    padding: 0 1em;
+    background-color:white;
+    box-shadow: 0 2px 4px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 250ms ease-in-out;
+}
+
+
+
+nav.white {
+    background-color: transparent;
+    box-shadow: initial;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+/* Media query: por ejemplo, para cambiar el comportamiento de los objetos según el tamaño que utilicemos*/
+@media (max-width: 720px) {
+    nav {
+        justify-content: flex-end;
+    }
+    nav ul {
+        display: none;
+    }
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:gray;
+    font-size: 1em;
+    margin: 0 0.5em;
+    padding-bottom: 0.3em;
+}
+
+nav.white ul li a {
+    color:white;
+}
+nav ul li a:hover {
+    border-bottom: 2px solid white;
+}
+nav.white ul li a:hover {
+    border-bottom: 2px solid white;
+}
+nav ul li a.active {
+    border-bottom: 2px solid white;
+}
+
+nav.white ul li a.active {
+    border-bottom: 2px solid white;
+}
+
+/* Burger */
+
+.burger {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    cursor: pointer;
+    z-index: 100; /*para que la capa este por encima y fuera del flex que lo contiene*/
+    display: none; /*para que no aparezca en tamñao grande*/
+}
+@media (max-width: 720px) {
+    .burger {
+        display: block; /*para que aparezca cuando la pantalla cambie de tamaño*/
+    }
+}
+
+.burger .bar {
+    height: 3px;
+    width: 35px;
+    background-color: #9998a1;
+    margin: 8px auto;
+    transition: all 250ms ease-in-out
+}
+
+.burger.white .bar {
+    background-color: white;
+}
+
+.burger.open .bar.up { /*este open se utilizará despues en jquery para iniciar el cambio de forma de la hamburguesa cuando el usuario lo presione.*/
+    transform: translateY(11px) rotateZ(45deg);
+}
+.burger.open .bar.middle {
+    width: 0;
+}
+.burger.open .bar.down {
+    transform: translateY(-11px) rotateZ(-45deg);
+}
+
+
+/* Menu lateral del burger */
+
+aside {
+    position: fixed;
+    padding: 80px 20px 20px;
+    top: 0;
+    left: -360px; /*Para que el aside este fuera de la pantalla y con jquery o js, darle la propiedad que al pulsar el menu burger entre desde la izquierda*/ 
+    z-index: 50;
+    height: 100vh;
+    width: 360px;/*360px para tamaño de pantalla completo y 100vw en dispositivos pequeños*/
+    background-color: #1e1e2d;
+    transition: all 400ms ease-in-out; /*Para cambiar la aclaración e las transiciones*/ 
+}
+
+aside.open {
+    left: 0;
+}
+
+aside .item {
+    padding: 1.5em 0;
+}
+
+aside .item:last-child {  /*para coger el ultimo hijo dentro de una caja.  la clase :nth-child() */
+    position: absolute;  /*Sirve para posicionar al elemento hijo con el elemento padre, 
+    pero para ello el padre debe estar posicionado con relative, fixed o absolute*/ 
+    bottom: 20px;
+    left: 20px;
+}
+aside hr {
+    border: none;
+    height: 1px;
+    background-color: #9998a1;
+}
+
+aside .item a {
+    text-decoration: none;
+    color: #9998a1;
+}
+aside .item a:hover, aside .item a.active {  /*dos conjuntos de selectores separados por comas que comparten las mismas caracteriticas*/
+    color: #ffffff;
+}
+
+
+
+/* Header */
+
+.hero {
+    margin-top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/squirrel-4515962_1920.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero .titles {
+    color: aliceblue;
+    margin-bottom: 1em;
+    border-left: 4px solid white;
+    align-self: flex-end;
+}
+
+.hero .titles h1 {
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero .titles h2 {
+    font-size: 3em;
+    margin-left: 20px;
+}
+
+/* Layout */
+
+.fila {
+    width: 100%;
+    display: flex;
+    padding: 0.5em;
+}
+
+.col-100 {
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+
