@@ -33,7 +33,7 @@ p {
 /* imágenes */
 
 .logo-small {
-    height: 100px;;
+    height: 60px;
 }
 
 /*Menús de navegación */
@@ -83,16 +83,16 @@ nav ul li a {
 }
 
 nav.white ul li a {
-    color:white;
+    color:rgb(255, 255, 255);
 }
 nav ul li a:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid grey;
 }
 nav.white ul li a:hover {
     border-bottom: 2px solid white;
 }
 nav ul li a.active {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid grey;
 }
 
 nav.white ul li a.active {

@@ -25,8 +25,13 @@ $(document).ready(function(){  /*estudiar las funciones en js y jquery*/
     });
 });
 
-$(window).resize(function(){
-    location.reload();
+
+// Resize para cerrar el menu burger cuando la panatalla cambie de tamaño//
+
+$(window).on('resize', function(){
+    $('.burger').removeClass('open');
+    $('aside').removeClass('open');
 });
+
 
 
